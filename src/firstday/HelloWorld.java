@@ -1,5 +1,7 @@
 package firstday;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -11,7 +13,10 @@ public class HelloWorld {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("http://www.google.com");
-		Thread.sleep(5000);
+		WebElement searchfield=driver.findElement(By.name("q"));
+		searchfield.sendKeys("HDFC Bank");
+		searchfield.click();
+		Thread.sleep(200000);
 		driver.close();
 	}
 
